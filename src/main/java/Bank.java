@@ -99,7 +99,7 @@ public final class Bank {
     /**
      placeholder.
      */
-    public static int totalAccounts = 0;
+    private static int totalAccounts = 0;
     /**
      * Uses static variable to get number of bank accounts opened.
      *
