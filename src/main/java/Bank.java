@@ -7,12 +7,18 @@
  *
  * @see <a href="https://cs125.cs.illinois.edu/lab/8/">Lab 8 Description</a>
  */
-public class Bank {
+public final class Bank {
+    /**
+     * the bank name.
+     */
+    private String bankName;
 
-    public String bankName;
-
-    public Bank() {
+    /**
+     * the bank constructor.
+     */
+    private Bank() {
         bankName = "Illini Bank";
+
     }
 
     /**
@@ -29,6 +35,11 @@ public class Bank {
         /*
          * Implement this function
          */
+        if (bankAccount.getAccountBalance() >= amount) {
+            bankAccount.setAccountBalance(bankAccount.getAccountBalance() - amount);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -45,6 +56,9 @@ public class Bank {
         /*
          * Implement this function
          */
+        bankAccount.setAccountBalance(bankAccount.getAccountNumber() + amount);
+        return true;
+
     }
 
     /**
@@ -64,6 +78,9 @@ public class Bank {
         /*
          * Implement this function
          */
+        source.setAccountBalance(source.getAccountBalance() - amount);
+        destination.setAccountBalance(destination.getAccountBalance() + amount);
+        return true;
     }
 
     /**
@@ -77,8 +94,11 @@ public class Bank {
         /*
          * Implement this function
          */
+        bankAccount.setOwnerName(name);
     }
-
+    /**
+     placeholder.
+     */
     public static int totalAccounts = 0;
     /**
      * Uses static variable to get number of bank accounts opened.
@@ -89,6 +109,7 @@ public class Bank {
         /*
          * Implement this function
          */
+        return totalAccounts;
     }
 
     /**
